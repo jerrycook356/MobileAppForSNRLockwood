@@ -7,14 +7,14 @@ namespace LockWood.WebService
 {
     public class WebService
     {
-        public static string baseUrl = "localHost:8080/WorkWebService/webapi/WebService";
+        public static string baseUrl = "http://192.168.254.98:80/WorkWebService/webapi/WebService";
         public WebService()
         {
         }
 
         public List<string> getSourcesFromDatabase()
         {
-            var url = baseUrl + "/getSources/";
+            var url = baseUrl + "/getSources";
             List<string> sources = new List<string>();
             using (WebClient webClient = new WebClient())
             {
@@ -26,6 +26,8 @@ namespace LockWood.WebService
                     Console.Out.WriteLine(e);
                 }
             }
+            int count = sources.Count;
+            Console.Out.WriteLine("hello");
             return sources;
         }
 

@@ -80,9 +80,15 @@ namespace LockWood
         {
             List<string> data2 = data;
             var pickerView = new UIPickerView();
-            pickerView.Model = data2;
-
-
+            var viewModel = new NameModel(data);
+            pickerView.Model = viewModel;
+            pickerView.ShowSelectionIndicator = true;
+            field.InputView = pickerView;
+            viewModel.textChanged += (sender, e) =>
+              {
+                  field.Text = viewModel.textNow;
+                  field.ResignFirstResponder();
+              };
 
         }
 
