@@ -1,0 +1,90 @@
+﻿using System;
+using Foundation;
+using UIKit;
+using System.Collections.Generic;
+using LockWood.PickerFillers;
+
+namespace LockWood
+{
+    public partial class ViewController : UIViewController
+    {
+        protected ViewController(IntPtr handle) : base(handle)
+        {
+            // Note: this .ctor should not contain any initialization logic.
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            // Perform any additional setup after loading the view, typically from a nib.
+            var tapOutside = new UITapGestureRecognizer(() => View.EndEditing(true));
+            tapOutside.CancelsTouchesInView = false;
+            View.AddGestureRecognizer(tapOutside);
+
+            StartDateTextField.AttributedPlaceholder = new Foundation.NSAttributedString(
+                "Start Date: ", null, UIColor.Red);
+            EndDateTextField.AttributedPlaceholder = new Foundation.NSAttributedString(
+                "End Date: ", null, UIColor.Red);
+
+            SourceTextField.AttributedPlaceholder = new Foundation.NSAttributedString(
+                "Source: ", null, UIColor.Red);
+
+            DestinationTextField.AttributedPlaceholder = new Foundation.NSAttributedString(
+                "Destination: ", null, UIColor.Red);
+
+            CustomerTextField.AttributedPlaceholder = new Foundation.NSAttributedString(
+                "Customer: ", null, UIColor.Red);
+
+
+            Picker(StartDateTextField);
+            Picker(EndDateTextField);
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+
+            base.ViewDidAppear(animated);
+            PickerFiller pFill = new PickerFiller();
+            //gets the sources from the database
+            List<string> sources = pFill.FillSourcePicker();
+            //makes a custom picker to hold the sources attached to the SourceTextField
+            PickerMaker(sources, SourceTextField);
+        }
+
+        public override void DidReceiveMemoryWarning()
+        {
+            base.DidReceiveMemoryWarning();
+            // Release any cached data, images, etc that aren't in use.
+        }
+
+
+        //creates the date pickers
+        public void Picker(UITextField textField)
+        {
+            var datePicker = new UIDatePicker();
+            datePicker.Mode = UIDatePickerMode.Date;
+            textField.InputView= datePicker;
+            datePicker.ValueChanged += (sender, e) =>
+             {
+                 NSDateFormatter dateFormat = new NSDateFormatter
+                 {
+                     DateFormat = "MM/dd/yyyy"
+                 };
+                 textField.Text = dateFormat.ToString(datePicker.Date);
+                 ResignFirstResponder();
+             };
+        }
+
+        //creats custom pickers attached to textfields
+        public void PickerMaker(List<string> data, UITextField field)
+        {
+            List<string> data2 = data;
+            var pickerView = new UIPickerView();
+            pickerView.Model = data2;
+
+
+
+        }
+
+    }
+}
