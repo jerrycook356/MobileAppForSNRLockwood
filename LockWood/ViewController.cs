@@ -3,6 +3,7 @@ using Foundation;
 using UIKit;
 using System.Collections.Generic;
 using LockWood.PickerFillers;
+using LockWood.Models;
 
 
 namespace LockWood
@@ -112,18 +113,17 @@ namespace LockWood
         //button that gets the information after the pickers are selected
         partial void SearchButton_TouchUpInside(UIButton sender)
         {
+            List<Transaction> transactions = new List<Transaction>();
             if((StartDateTextField.Text != "")&&(EndDateTextField.Text != "")&&
               (SourceTextField.Text != "")&&(DestinationTextField.Text != "")&&
                (CustomerTextField.Text !=""))
             {
-                string startDate = StartDateTextField.Text;
-                string endDate = EndDateTextField.Text;
-                string source = SourceTextField.Text;
-                string destination = DestinationTextField.Text;
-                string customer = CustomerTextField.Text;
+                Transaction transaction = new Transaction(StartDateTextField.Text,
+                                                         EndDateTextField.Text, SourceTextField.Text,
+                                                          DestinationTextField.Text, CustomerTextField.Text);
 
                 WebService.WebService ws = new WebService.WebService();
-                ws.GetTransactions(startDate, endDate, source, destination, customer);
+               transactions =  ws.GetTransactions(transaction);
             }
         }
     }

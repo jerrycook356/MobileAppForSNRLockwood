@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Net;
 using Newtonsoft.Json;
 using LockWood.Models;
+using System.Net.Http;
+using System.Text;
 
 namespace LockWood.WebService
 {
@@ -66,11 +68,21 @@ namespace LockWood.WebService
             }
             return customers;
         }
-        public List<Transaction> GetTransactions()
+        public List<Transaction> GetTransactions(Transaction transaction)
         {
             List<Transaction> transactions = new List<Transaction>();
-            var url = baseUrl + "/getSelectedTransaction";
-            using (webCli)
+            var url = baseUrl + "/getBySelection";
+            var content = JsonConvert.SerializeObject(transaction);
+            var httpContent = new StringContent(content,Encoding.UTF8,"application/json");
+            using (var httpClient = new HttpClient())
+            {
+                var httpRequest =  httpClient.PostAsync(url, httpContent);
+               
+                Console.Out.WriteLine(httpRequest.ToString());
+            }
+            return transactions;
         }
+
+       
     }
 }
