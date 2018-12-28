@@ -15,6 +15,14 @@ namespace LockWood
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BackButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ClearButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField CustomerTextField { get; set; }
 
         [Outlet]
@@ -27,14 +35,36 @@ namespace LockWood
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView ResultTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SearchButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField SourceTextField { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField StartDateTextField { get; set; }
 
+        [Action ("SearchButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SearchButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (BackButton != null) {
+                BackButton.Dispose ();
+                BackButton = null;
+            }
+
+            if (ClearButton != null) {
+                ClearButton.Dispose ();
+                ClearButton = null;
+            }
+
             if (CustomerTextField != null) {
                 CustomerTextField.Dispose ();
                 CustomerTextField = null;
@@ -48,6 +78,16 @@ namespace LockWood
             if (EndDateTextField != null) {
                 EndDateTextField.Dispose ();
                 EndDateTextField = null;
+            }
+
+            if (ResultTextView != null) {
+                ResultTextView.Dispose ();
+                ResultTextView = null;
+            }
+
+            if (SearchButton != null) {
+                SearchButton.Dispose ();
+                SearchButton = null;
             }
 
             if (SourceTextField != null) {

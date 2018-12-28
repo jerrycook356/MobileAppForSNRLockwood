@@ -14,47 +14,109 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LockWood SNR - Stockpile Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="204" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LockWood SNR - Stockpile Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="204" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="20" y="45" width="284" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="207" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="207" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="84" y="97" width="152" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="603" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="603" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="84" y="135" width="152" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="604" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="604" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="84" y="186" width="152" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="605" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="84" y="232" width="152" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="605" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="84" y="224" width="152" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="810" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="810" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="84" y="270" width="152" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3542" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="117" y="320" width="84" height="30"/>
+                                <state key="normal" title="Search: "/>
+                                <connections>
+                                    <action selector="SearchButton_TouchUpInside:" destination="BYZ-38-t0r" id="3577" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3546" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="42" y="374" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3551" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="42" y="518" width="73" height="30"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3555" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="196" y="518" width="65" height="30"/>
+                                <state key="normal" title="Clear"/>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint id="3235" firstItem="204" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
+                            <constraint id="3236" firstItem="204" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="3237" firstItem="204" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25"/>
+                            <constraint id="3238" firstItem="207" firstAttribute="top" secondItem="204" secondAttribute="bottom" constant="8"/>
+                            <constraint id="3239" firstItem="204" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
+                            <constraint id="3240" firstItem="204" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="3241" firstItem="204" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25"/>
+                            <constraint id="3242" firstItem="wfy-db-euE" firstAttribute="top" secondItem="204" secondAttribute="bottom" constant="479"/>
+                            <constraint id="3243" firstItem="207" firstAttribute="top" secondItem="204" secondAttribute="bottom" constant="8"/>
+                            <constraint id="3244" firstItem="207" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68"/>
+                            <constraint id="3245" firstAttribute="trailingMargin" secondItem="207" secondAttribute="trailing" constant="68"/>
+                            <constraint id="3246" firstItem="603" firstAttribute="top" secondItem="207" secondAttribute="bottom" constant="8"/>
+                            <constraint id="3247" firstItem="603" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68"/>
+                            <constraint id="3248" firstAttribute="trailingMargin" secondItem="603" secondAttribute="trailing" constant="68"/>
+                            <constraint id="3249" firstItem="604" firstAttribute="top" secondItem="603" secondAttribute="bottom" constant="21"/>
+                            <constraint id="3250" firstItem="604" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68"/>
+                            <constraint id="3251" firstAttribute="trailingMargin" secondItem="604" secondAttribute="trailing" constant="68"/>
+                            <constraint id="3253" firstItem="605" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68"/>
+                            <constraint id="3254" firstAttribute="trailingMargin" secondItem="605" secondAttribute="trailing" constant="68"/>
+                            <constraint id="3255" firstItem="810" firstAttribute="top" secondItem="605" secondAttribute="bottom" constant="16"/>
+                            <constraint id="3256" firstItem="810" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68"/>
+                            <constraint id="3257" firstAttribute="trailingMargin" secondItem="810" secondAttribute="trailing" constant="68"/>
+                            <constraint id="3260" firstItem="605" firstAttribute="top" secondItem="604" secondAttribute="bottom" constant="8"/>
+                            <constraint id="3543" firstItem="3542" firstAttribute="top" secondItem="810" secondAttribute="bottom" constant="20"/>
+                            <constraint id="3544" firstItem="3542" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="101"/>
+                            <constraint id="3545" firstAttribute="trailingMargin" secondItem="3542" secondAttribute="trailing" constant="103"/>
+                            <constraint id="3547" firstItem="3546" firstAttribute="top" secondItem="3542" secondAttribute="bottom" constant="24"/>
+                            <constraint id="3548" firstItem="3546" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26"/>
+                            <constraint id="3549" firstAttribute="trailingMargin" secondItem="3546" secondAttribute="trailing" constant="22"/>
+                            <constraint id="3550" firstItem="wfy-db-euE" firstAttribute="top" secondItem="3546" secondAttribute="bottom" constant="66"/>
+                            <constraint id="3562" firstAttribute="trailingMargin" secondItem="3555" secondAttribute="trailing" constant="43"/>
+                            <constraint id="3563" firstItem="3555" firstAttribute="top" secondItem="3546" secondAttribute="bottom" constant="16"/>
+                            <constraint id="3564" firstItem="wfy-db-euE" firstAttribute="top" secondItem="3555" secondAttribute="bottom" constant="20"/>
+                            <constraint id="3571" firstItem="3555" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="498"/>
+                            <constraint id="3572" firstItem="3555" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="180"/>
+                            <constraint id="3573" firstItem="3551" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="498"/>
+                            <constraint id="3574" firstItem="3551" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26"/>
+                            <constraint id="3575" firstItem="wfy-db-euE" firstAttribute="top" secondItem="3551" secondAttribute="bottom" constant="20"/>
+                            <constraint id="3576" firstAttribute="trailingMargin" secondItem="3551" secondAttribute="trailing" constant="189"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="StartDateTextField" destination="207" id="name-outlet-207"/>
@@ -62,6 +124,10 @@
                         <outlet property="SourceTextField" destination="604" id="name-outlet-604"/>
                         <outlet property="DestinationTextField" destination="605" id="name-outlet-605"/>
                         <outlet property="CustomerTextField" destination="810" id="name-outlet-810"/>
+                        <outlet property="SearchButton" destination="3542" id="name-outlet-3542"/>
+                        <outlet property="ResultTextView" destination="3546" id="name-outlet-3546"/>
+                        <outlet property="BackButton" destination="3551" id="name-outlet-3551"/>
+                        <outlet property="ClearButton" destination="3555" id="name-outlet-3555"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,7 +142,7 @@
                         <viewControllerLayoutGuide type="bottom" id="198"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="201">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

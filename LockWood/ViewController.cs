@@ -4,10 +4,13 @@ using UIKit;
 using System.Collections.Generic;
 using LockWood.PickerFillers;
 
+
 namespace LockWood
 {
     public partial class ViewController : UIViewController
     {
+
+
         protected ViewController(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
@@ -44,11 +47,24 @@ namespace LockWood
         {
 
             base.ViewDidAppear(animated);
+
+            //code to make custom pickers
+
             PickerFiller pFill = new PickerFiller();
             //gets the sources from the database
             List<string> sources = pFill.FillSourcePicker();
             //makes a custom picker to hold the sources attached to the SourceTextField
             PickerMaker(sources, SourceTextField);
+            //gets customers from the database
+            List<string> customers = pFill.FillCustomerPicker();
+            //makes a custom picker to hold the customers attached to the CustomerTextField
+            PickerMaker(customers, CustomerTextField);
+            //gets the destinations from the database
+            List<string> destinations = pFill.FillDestinationPicker();
+            //makes a custompicker totheld the destinations attached to the DestinationTextField
+            PickerMaker(destinations, DestinationTextField);
+
+            //end custom pickers
         }
 
         public override void DidReceiveMemoryWarning()
@@ -92,5 +108,23 @@ namespace LockWood
 
         }
 
+
+        //button that gets the information after the pickers are selected
+        partial void SearchButton_TouchUpInside(UIButton sender)
+        {
+            if((StartDateTextField.Text != "")&&(EndDateTextField.Text != "")&&
+              (SourceTextField.Text != "")&&(DestinationTextField.Text != "")&&
+               (CustomerTextField.Text !=""))
+            {
+                string startDate = StartDateTextField.Text;
+                string endDate = EndDateTextField.Text;
+                string source = SourceTextField.Text;
+                string destination = DestinationTextField.Text;
+                string customer = CustomerTextField.Text;
+
+                WebService.WebService ws = new WebService.WebService();
+                ws.GetTransactions(startDate, endDate, source, destination, customer);
+            }
+        }
     }
 }

@@ -94,6 +94,7 @@
     <Folder Include="Resources\" />
     <Folder Include="PickerFillers\" />
     <Folder Include="WebService\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -114,6 +115,7 @@
     <Compile Include="PickerFillers\PickerFiller.cs" />
     <Compile Include="WebService\WebService.cs" />
     <Compile Include="PickerFillers\NameModel.cs" />
+    <Compile Include="Models\Transaction.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
