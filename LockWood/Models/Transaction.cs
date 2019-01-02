@@ -3,15 +3,15 @@ namespace LockWood.Models
 {
     public class Transaction
     {
-        private string truckId;
-        private string startDate;
-        private string endDate;
-        private string source;
-        private string destination;
-        private string customer;
-        private string grossWeight;
-        private string tareWeight;
-        private string timeStamp;
+        public string truckId;
+        public  string startDate;
+        public string endDate;
+        public string source;
+        public string destination;
+        public string customer;
+        public string grossWeight;
+        public string tareWeight;
+        public string timeStamp;
       
 
         public Transaction()

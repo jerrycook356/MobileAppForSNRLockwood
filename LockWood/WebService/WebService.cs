@@ -90,13 +90,11 @@ namespace LockWood.WebService
             var url = baseUrl + "/getBySelection"+completeStartDate+completeEndDate+
                 sourceString+destinationString+customerString;
 
-            Console.Out.WriteLine("url = " + url);
             using (WebClient webClient = new WebClient())
             {
                 try
                 {
                     var content = webClient.DownloadString(url);
-                    Console.Out.WriteLine(content);
                     transactions = JsonConvert.DeserializeObject<List<Transaction>>(content);
                 }
                 catch (Exception e)
@@ -104,7 +102,7 @@ namespace LockWood.WebService
                     Console.Out.WriteLine(e);
                 }
             }
-            
+           
             return transactions;
         }
 
