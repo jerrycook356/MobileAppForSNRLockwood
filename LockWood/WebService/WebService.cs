@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using LockWood.Models;
 using System.Net.Http;
 using System.Text;
+using System.Globalization;
 
 namespace LockWood.WebService
 {
@@ -68,21 +69,45 @@ namespace LockWood.WebService
             }
             return customers;
         }
-        public List<Transaction> GetTransactions(Transaction transaction)
+        public List<Transaction> GetSelectedTransactions(Transaction transaction)
         {
             List<Transaction> transactions = new List<Transaction>();
-            var url = baseUrl + "/getBySelection";
-            var content = JsonConvert.SerializeObject(transaction);
-            var httpContent = new StringContent(content,Encoding.UTF8,"application/json");
-            using (var httpClient = new HttpClient())
+            //convert startdate string
+            string startDate = transaction.GetStartDate();
+            DateTime dt = DateTime.ParseExact(startDate, "MM/dd/yyyy",null);
+            string startDateString = dt.ToString("yyyy-MM-dd", null);
+           string completeStartDate = "?startDate="+ startDateString + " 00:00:00.000000";
+
+            //convert endDate string
+            string endDate = transaction.GetEndDate();
+            dt = DateTime.ParseExact(endDate, "MM/dd/yyyy", null);
+            string endDateString = dt.ToString("yyyy-MM-dd", null);
+            string completeEndDate = "&endDate="+endDateString + " 23:59:59.000000";
+
+            var sourceString = "&source=" + transaction.GetSource();
+            var destinationString = "&destination=" + transaction.GetDestination();
+            var customerString = "&customer=" + transaction.GetCustomer();
+            var url = baseUrl + "/getBySelection"+completeStartDate+completeEndDate+
+                sourceString+destinationString+customerString;
+
+            Console.Out.WriteLine("url = " + url);
+            using (WebClient webClient = new WebClient())
             {
-                var httpRequest =  httpClient.PostAsync(url, httpContent);
-               
-                Console.Out.WriteLine(httpRequest.ToString());
+                try
+                {
+                    var content = webClient.DownloadString(url);
+                    Console.Out.WriteLine(content);
+                    transactions = JsonConvert.DeserializeObject<List<Transaction>>(content);
+                }
+                catch (Exception e)
+                {
+                    Console.Out.WriteLine(e);
+                }
             }
+            
             return transactions;
         }
 
-       
+
     }
 }

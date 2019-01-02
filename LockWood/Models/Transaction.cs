@@ -3,11 +3,15 @@ namespace LockWood.Models
 {
     public class Transaction
     {
+        private string truckId;
         private string startDate;
         private string endDate;
         private string source;
         private string destination;
         private string customer;
+        private string grossWeight;
+        private string tareWeight;
+        private string timeStamp;
       
 
         public Transaction()
@@ -62,6 +66,35 @@ namespace LockWood.Models
         public string GetCustomer()
         {
             return customer;
+        }
+        public void SetTruckId(string truckId)
+        {
+            this.truckId = truckId;
+        }
+        public string getTruckId()
+        {
+            return truckId;
+        }
+        public void SetGrossWeight(string grossWeight)
+        {
+            this.grossWeight = grossWeight;
+        }
+        public string GetGrossWeight()
+        {
+            return grossWeight;
+        }
+        public void SetTareWeight(string tareWeight)
+        {
+            this.tareWeight = tareWeight;
+        }
+        public string GetTareWeight()
+        {
+            return tareWeight;
+        }
+
+        public void SetTimeStamp(string timeStamp)
+        {
+            this.timeStamp = timeStamp;
         }
     }
 }

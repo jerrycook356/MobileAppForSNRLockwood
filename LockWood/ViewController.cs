@@ -123,7 +123,7 @@ namespace LockWood
                                                           DestinationTextField.Text, CustomerTextField.Text);
 
                 WebService.WebService ws = new WebService.WebService();
-               transactions =  ws.GetTransactions(transaction);
+               transactions =  ws.GetSelectedTransactions(transaction);
             }
         }
     }
