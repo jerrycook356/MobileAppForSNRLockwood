@@ -117,6 +117,14 @@
     <Compile Include="WebService\WebService.cs" />
     <Compile Include="PickerFillers\NameModel.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <Compile Include="MainScreenViewController.cs" />
+    <Compile Include="MainScreenViewController.designer.cs">
+      <DependentUpon>MainScreenViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\7e1b3f_db1e69a5928f4efbab45519c18792b97~mv2.jpg" />
+    <BundleResource Include="Resources\snrLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -49,6 +49,14 @@ namespace LockWood
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField StartDateTextField { get; set; }
 
+        [Action ("BackToMainView:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BackToMainView (UIKit.UIButton sender);
+
+        [Action ("ClearButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void ClearButton_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("SearchButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void SearchButton_TouchUpInside (UIKit.UIButton sender);

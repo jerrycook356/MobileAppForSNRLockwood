@@ -121,10 +121,51 @@ namespace LockWood
                 Transaction transaction = new Transaction(StartDateTextField.Text,
                                                          EndDateTextField.Text, SourceTextField.Text,
                                                           DestinationTextField.Text, CustomerTextField.Text);
-
+                // gets the transactions from the database based on selections 
                 WebService.WebService ws = new WebService.WebService();
                transactions =  ws.GetSelectedTransactions(transaction);
+
+                FillTextView(transactions);
             }
+        }
+
+        public void FillTextView(List<Transaction>transactions)
+        {
+            int numberOfLoads = transactions.Count;
+            double totalGrossWeight = 0;
+            double totalTareWeight = 0;
+            double totalTons = 0;
+
+            foreach(var truck in transactions)
+            {
+                totalGrossWeight += Convert.ToDouble(truck.grossWeight);
+                totalTareWeight += Convert.ToDouble(truck.tareWeight);
+                
+            }
+            totalTons = (totalGrossWeight - totalTareWeight) / 2000;
+            ResultTextView.Text = "Number of loads: " + numberOfLoads + "\nTotal Gross Weight: " + totalGrossWeight +
+                  "\nTotal Tare Weight: " + totalTareWeight + "\nTotal Tons: " + totalTons;
+        }
+
+        partial void ClearButton_TouchUpInside(UIButton sender)
+        {
+            StartDateTextField.Text = "";
+            EndDateTextField.Text = "";
+            SourceTextField.Text = "";
+            DestinationTextField.Text = "";
+            CustomerTextField.Text = "";
+            ResultTextView.Text = "";
+        }
+
+        partial void BackToMainView(UIButton sender)
+        {
+            //get Reference to storyBoard
+            UIStoryboard storyboard = this.Storyboard;
+            //create instance of view controller
+            UIViewController viewController =
+                (UIViewController)storyboard.InstantiateViewController("MainScreenViewController");
+            viewController.ModalTransitionStyle = UIModalTransitionStyle.FlipHorizontal;
+            this.PresentViewController(viewController, true, null);
         }
     }
 }
