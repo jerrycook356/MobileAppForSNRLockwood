@@ -10,8 +10,7 @@ namespace LockWood
 {
     public partial class ViewController : UIViewController
     {
-
-
+        PickerMaker maker;
         protected ViewController(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
@@ -55,15 +54,15 @@ namespace LockWood
             //gets the sources from the database
             List<string> sources = pFill.FillSourcePicker();
             //makes a custom picker to hold the sources attached to the SourceTextField
-            PickerMaker(sources, SourceTextField);
+            maker = new PickerMaker(sources, SourceTextField);
             //gets customers from the database
             List<string> customers = pFill.FillCustomerPicker();
             //makes a custom picker to hold the customers attached to the CustomerTextField
-            PickerMaker(customers, CustomerTextField);
+            maker = new PickerMaker(customers, CustomerTextField);
             //gets the destinations from the database
             List<string> destinations = pFill.FillDestinationPicker();
             //makes a custompicker totheld the destinations attached to the DestinationTextField
-            PickerMaker(destinations, DestinationTextField);
+            maker = new  PickerMaker(destinations, DestinationTextField);
 
             //end custom pickers
         }
@@ -93,7 +92,7 @@ namespace LockWood
         }
 
         //creats custom pickers attached to textfields
-        public void PickerMaker(List<string> data, UITextField field)
+      /*  public void PickerMaker(List<string> data, UITextField field)
         {
             List<string> data2 = data;
             var pickerView = new UIPickerView();
@@ -107,7 +106,7 @@ namespace LockWood
                   field.ResignFirstResponder();
               };
 
-        }
+        }*/
 
 
         //button that gets the information after the pickers are selected
@@ -159,13 +158,7 @@ namespace LockWood
 
         partial void BackToMainView(UIButton sender)
         {
-            //get Reference to storyBoard
-            UIStoryboard storyboard = this.Storyboard;
-            //create instance of view controller
-            UIViewController viewController =
-                (UIViewController)storyboard.InstantiateViewController("MainScreenViewController");
-            viewController.ModalTransitionStyle = UIModalTransitionStyle.FlipHorizontal;
-            this.PresentViewController(viewController, true, null);
+            ViewChanger viewChanger = new ViewChanger(this, "MainScreenViewController");
         }
     }
 }

@@ -12,14 +12,14 @@ namespace LockWood
 
 partial void ChangToStockpileView(UIButton sender)
         {
-            //get Reference to storyBoard
-            UIStoryboard storyboard = this.Storyboard;
-            //create instance of view controller
-            UIViewController viewController = 
-                (UIViewController)storyboard.InstantiateViewController("StockPileView");
-            viewController.ModalTransitionStyle = UIModalTransitionStyle.FlipHorizontal;
-            this.PresentViewController(viewController, true, null);
 
+            ViewChanger viewChanger = new ViewChanger(this, "StockPileView");
+
+        }
+
+partial void MapViewButton_TouchUpInside(UIButton sender)
+        {
+            ViewChanger viewChanger = new ViewChanger(this, "MapViewController");
         }
     }
 }

@@ -121,6 +121,20 @@
     <Compile Include="MainScreenViewController.designer.cs">
       <DependentUpon>MainScreenViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CoalAnnotation.cs" />
+    <Compile Include="Models\StockPileInfo.cs" />
+    <Compile Include="ViewChanger.cs" />
+    <Compile Include="LocalStorageList.cs" />
+    <Compile Include="MapViewController.cs" />
+    <Compile Include="MapViewController.designer.cs">
+      <DependentUpon>MapViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapDelegate.cs" />
+    <Compile Include="SetInforViewController.cs" />
+    <Compile Include="SetInforViewController.designer.cs">
+      <DependentUpon>SetInforViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickerMaker.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\7e1b3f_db1e69a5928f4efbab45519c18792b97~mv2.jpg" />
