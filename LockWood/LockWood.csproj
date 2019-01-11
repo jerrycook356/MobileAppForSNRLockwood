@@ -135,6 +135,7 @@
       <DependentUpon>SetInforViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="PickerMaker.cs" />
+    <Compile Include="WebService\MapWebService.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\7e1b3f_db1e69a5928f4efbab45519c18792b97~mv2.jpg" />

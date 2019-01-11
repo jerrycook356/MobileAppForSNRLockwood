@@ -54,6 +54,7 @@ namespace LockWood.Models
         {
             stockpileNumber = null;
             company = null;
+            source = null;
         }
 
     }

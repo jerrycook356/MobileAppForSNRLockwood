@@ -5,6 +5,7 @@ using CoreLocation;
 using MapKit;
 using System.Collections.Generic;
 using LockWood.Models;
+using LockWood.WebService;
 
 namespace LockWood
 {
@@ -12,6 +13,7 @@ namespace LockWood
     {
         public static List<CoalAnnotation> annots = new List<CoalAnnotation>();
         MKMapViewDelegate mapDelegate;
+        MapWebService mw = new MapWebService();
         LocalStorageList storage = new LocalStorageList();
         public MapViewController(IntPtr handle) : base(handle)
         {
@@ -70,7 +72,8 @@ namespace LockWood
             {
                 CoalAnnotation annotation = new CoalAnnotation(stockPile, company,source, gelocation);
                 annotation.IncrementId();
-                storage.AddAnnotation(annotation);
+                // storage.AddAnnotation(annotation);
+                mw.SaveAnnotation(annotation);
                 mapView.AddAnnotation(annotation);
                 info.clear();
             }
@@ -79,9 +82,14 @@ namespace LockWood
         //fill map from saved annotations
         public void FillMap()
         {
-            annots = storage.GetAllAnnotations();
-            foreach (var annotation in annots)
-            {
+            //  annots = storage.GetAllAnnotations();
+            // foreach (var annotation in annots)
+            // {
+            //     mapView.AddAnnotation(annotation);
+            //  }
+            annots = mw.getAnnotationsFromDatabase();
+            Console.Out.WriteLine("number of annot from database = " + annots.Count);
+            foreach(var annotation in annots){
                 mapView.AddAnnotation(annotation);
             }
         }
