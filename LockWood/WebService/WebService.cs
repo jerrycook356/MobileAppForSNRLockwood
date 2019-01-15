@@ -11,7 +11,10 @@ namespace LockWood.WebService
 {
     public class WebService
     {
-        public static string baseUrl = "http://192.168.254.98:80/WorkWebService/webapi/WebService";
+        //public static string baseUrl = "http://192.168.254.98:90/WebserviceForWork2/webapi/WebService";
+        //public ip at work with server on laptop running in auger.
+        public static string baseUrl = "http://71.28.239.175:90/WebserviceForWork2/webapi/WebService";
+
         public WebService()
         {
         }

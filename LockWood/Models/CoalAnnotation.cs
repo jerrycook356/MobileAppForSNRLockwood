@@ -38,6 +38,8 @@ namespace LockWood.Models
                 this.stockpile = stockPileNumberIn;
                 this.company = companyIn;
                 this.source = sourceIn;
+                this.longitude = longitude;
+                this.latitude = latitude;
                 CLLocationCoordinate2D location;
                 location.Latitude = latitude;
                 location.Longitude = longitude;

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
 using CoreLocation;
+using LockWood.Models;
+using LockWood.WebService;
 using MapKit;
 using UIKit;
 
@@ -9,7 +11,7 @@ namespace LockWood
     public class MapDelegate:MKMapViewDelegate
     {
         private static readonly string identifier = "id";
-        LocalStorageList storage = new LocalStorageList();
+        MapWebService mw = new MapWebService();
 
         public MapDelegate()
         {
@@ -51,7 +53,9 @@ namespace LockWood
             {
 
                 var coord = annotationLocation;
-                storage.RemoveAnnotation(coord);
+                CoalAnnotation annot = new CoalAnnotation();
+                annot.coord = annotation.Coordinate;
+                mw.DeleteAnnotation(annot);
                 mapView.RemoveAnnotation(annotation);
 
             };
