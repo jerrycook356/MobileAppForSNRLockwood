@@ -16,30 +16,43 @@ namespace LockWood
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton MapViewButton { get; set; }
+        UIKit.UIButton AboutButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton StockPIleInfoButton { get; set; }
 
-        [Action ("ChangToStockpileView:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void ChangToStockpileView (UIKit.UIButton sender);
+        UIKit.UIButton SummaryButton { get; set; }
 
-        [Action ("MapViewButton_TouchUpInside:")]
+        [Action ("AboutButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void MapViewButton_TouchUpInside (UIKit.UIButton sender);
+        partial void AboutButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("StockPIleInfoButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void StockPIleInfoButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("SummaryButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SummaryButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (MapViewButton != null) {
-                MapViewButton.Dispose ();
-                MapViewButton = null;
+            if (AboutButton != null) {
+                AboutButton.Dispose ();
+                AboutButton = null;
             }
 
             if (StockPIleInfoButton != null) {
                 StockPIleInfoButton.Dispose ();
                 StockPIleInfoButton = null;
+            }
+
+            if (SummaryButton != null) {
+                SummaryButton.Dispose ();
+                SummaryButton = null;
             }
         }
     }

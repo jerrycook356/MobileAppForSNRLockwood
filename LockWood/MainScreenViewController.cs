@@ -6,20 +6,28 @@ namespace LockWood
 {
     public partial class MainScreenViewController : UIViewController
     {
-        public MainScreenViewController (IntPtr handle) : base (handle)
+        public MainScreenViewController(IntPtr handle) : base(handle)
         {
         }
 
-partial void ChangToStockpileView(UIButton sender)
-        {
+       
 
+partial void StockPIleInfoButton_TouchUpInside(UIButton sender)
+        {
             ViewChanger viewChanger = new ViewChanger(this, "StockPileView");
-
         }
 
-partial void MapViewButton_TouchUpInside(UIButton sender)
+
+partial void SummaryButton_TouchUpInside(UIButton sender)
         {
-            ViewChanger viewChanger = new ViewChanger(this, "MapViewController");
+            ViewChanger viewChanger = new ViewChanger(this, "SummaryViewController");
         }
-    }
+
+
+partial void AboutButton_TouchUpInside(UIButton sender)
+        {
+            ViewChanger viewChanger = new ViewChanger(this, "AboutViewController");
+        }
+
+
 }

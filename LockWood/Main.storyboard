@@ -68,11 +68,15 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3551" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="46" y="518" width="159" height="198"/>
+                                <rect key="frame" x="61" y="686" width="79" height="31"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="BackToMainView:" destination="BYZ-38-t0r" id="5003" eventType="touchUpInside"/>
                                 </connections>
+                                <constraints>
+                                    <constraint id="10163" firstAttribute="width" constant="79"/>
+                                    <constraint id="10164" firstAttribute="height" constant="31"/>
+                                </constraints>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3555" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="200" y="686" width="151" height="30"/>
@@ -80,6 +84,9 @@
                                 <connections>
                                     <action selector="ClearButton_TouchUpInside:" destination="BYZ-38-t0r" id="3872" eventType="touchUpInside"/>
                                 </connections>
+                                <constraints>
+                                    <constraint id="10167" firstAttribute="width" constant="151"/>
+                                </constraints>
                             </button>
                         </subviews>
                         <constraints>
@@ -113,15 +120,11 @@
                             <constraint id="3548" firstItem="3546" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26"/>
                             <constraint id="3549" firstAttribute="trailingMargin" secondItem="3546" secondAttribute="trailing" constant="22"/>
                             <constraint id="3550" firstItem="wfy-db-euE" firstAttribute="top" secondItem="3546" secondAttribute="bottom" constant="66"/>
-                            <constraint id="3562" firstAttribute="trailingMargin" secondItem="3555" secondAttribute="trailing" constant="43"/>
-                            <constraint id="3563" firstItem="3555" firstAttribute="top" secondItem="3546" secondAttribute="bottom" constant="16"/>
-                            <constraint id="3564" firstItem="wfy-db-euE" firstAttribute="top" secondItem="3555" secondAttribute="bottom" constant="20"/>
-                            <constraint id="3571" firstItem="3555" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="498"/>
-                            <constraint id="3572" firstItem="3555" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="180"/>
-                            <constraint id="3573" firstItem="3551" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="498"/>
-                            <constraint id="3574" firstItem="3551" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26"/>
-                            <constraint id="3575" firstItem="wfy-db-euE" firstAttribute="top" secondItem="3551" secondAttribute="bottom" constant="20"/>
-                            <constraint id="3576" firstAttribute="trailingMargin" secondItem="3551" secondAttribute="trailing" constant="189"/>
+                            <constraint id="10160" firstAttribute="bottom" secondItem="3551" secondAttribute="bottom" constant="19"/>
+                            <constraint id="10162" firstItem="3551" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="61"/>
+                            <constraint id="10165" firstAttribute="bottom" secondItem="3555" secondAttribute="bottom" constant="20"/>
+                            <constraint id="10166" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="3555" secondAttribute="trailing" constant="63"/>
+                            <constraint id="10169" firstItem="3555" firstAttribute="leading" secondItem="3551" secondAttribute="trailing" constant="60"/>
                         </constraints>
                     </view>
                     <connections>
@@ -152,158 +155,136 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4166" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="507" width="94" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4166" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="78" y="507" width="94" height="30"/>
                                 <state key="normal" title="Stockpile info"/>
                                 <connections>
-                                    <action selector="ChangToStockpileView:" destination="200" id="4463" eventType="touchUpInside"/>
+                                    <action selector="StockPIleInfoButton_TouchUpInside:" destination="200" id="10766" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6133" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="snrLogo.png">
-                                <rect key="frame" x="35" y="78" width="240" height="210"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6133" translatesAutoresizingMaskIntoConstraints="NO" image="snrLogo.png">
+                                <rect key="frame" x="100" y="86" width="240" height="210"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7863" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="164" y="507" width="111" height="30"/>
-                                <state key="normal" title="Map View"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="10180" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="270" y="507" width="81" height="30"/>
+                                <state key="normal" title="Summaries"/>
                                 <connections>
-                                    <action selector="MapViewButton_TouchUpInside:" destination="200" id="7864" eventType="touchUpInside"/>
+                                    <action selector="SummaryButton_TouchUpInside:" destination="200" id="10767" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="10181" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="163" y="622" width="93" height="30"/>
+                                <state key="normal" title="About"/>
+                                <connections>
+                                    <action selector="AboutButton_TouchUpInside:" destination="200" id="10768" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint id="10170" firstItem="6133" firstAttribute="centerX" secondItem="201" secondAttribute="centerX" constant="13"/>
+                            <constraint id="10171" firstItem="6133" firstAttribute="top" secondItem="197" secondAttribute="bottom" constant="66"/>
+                            <constraint id="10172" firstAttribute="trailingMargin" secondItem="6133" secondAttribute="trailing" constant="54"/>
+                            <constraint id="10173" firstItem="6133" firstAttribute="leading" secondItem="201" secondAttribute="leadingMargin" constant="80"/>
+                            <constraint id="10174" firstItem="198" firstAttribute="top" secondItem="6133" secondAttribute="bottom" constant="440"/>
+                            <constraint id="10175" firstItem="4166" firstAttribute="top" secondItem="6133" secondAttribute="bottom" constant="211"/>
+                            <constraint id="10176" firstItem="4166" firstAttribute="leading" secondItem="201" secondAttribute="leadingMargin" constant="58"/>
+                            <constraint id="10179" firstAttribute="trailingMargin" secondItem="4166" secondAttribute="trailing" constant="222"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="StockPIleInfoButton" destination="4166" id="name-outlet-4166"/>
-                        <outlet property="MapViewButton" destination="7863" id="name-outlet-7863"/>
+                        <outlet property="SummaryButton" destination="10180" id="name-outlet-10180"/>
+                        <outlet property="AboutButton" destination="10181" id="name-outlet-10181"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="202" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-420" y="10"/>
         </scene>
-        <scene sceneID="6971">
+        <scene sceneID="10771">
             <objects>
-                <viewController id="6972" sceneMemberID="viewController" customClass="MapViewController" storyboardIdentifier="MapViewController">
+                <viewController id="10772" sceneMemberID="viewController" customClass="SummaryViewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6969"/>
-                        <viewControllerLayoutGuide type="bottom" id="6970"/>
+                        <viewControllerLayoutGuide type="top" id="10769"/>
+                        <viewControllerLayoutGuide type="bottom" id="10770"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6973">
+                    <view key="view" contentMode="scaleToFill" id="10773">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="6976" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="40" y="68" width="240" height="395"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6977" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="40" y="493" width="58" height="42"/>
-                                <state key="normal" title="Set Info"/>
-                                <connections>
-                                    <action selector="StockPileInfoButton_TouchUpInside:" destination="6972" id="9002" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6978" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="124" y="499" width="67" height="30"/>
-                                <state key="normal" title="Center"/>
-                                <connections>
-                                    <action selector="CenteryButton_TouchUpInside:" destination="6972" id="7284" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6979" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="234" y="499" width="46" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="BackButton_TouchUpInside:" destination="6972" id="6980" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
-                        </subviews>
                     </view>
-                    <connections>
-                        <outlet property="StockPileInfoButton" destination="6977" id="name-outlet-6977"/>
-                        <outlet property="CenteryButton" destination="6978" id="name-outlet-6978"/>
-                        <outlet property="BackButton" destination="6979" id="name-outlet-6979"/>
-                        <outlet property="mapView" destination="6976" id="name-outlet-6976"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6974" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10774" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="-14"/>
+            <point key="canvasLocation" x="444" y="10"/>
         </scene>
-        <scene sceneID="7288">
+        <scene sceneID="10778">
             <objects>
-                <viewController id="7289" sceneMemberID="viewController" customClass="SetInforViewController" storyboardIdentifier="SetInfoViewController">
+                <viewController id="10779" sceneMemberID="viewController" customClass="SelectedDateSummaryView">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7286"/>
-                        <viewControllerLayoutGuide type="bottom" id="7287"/>
+                        <viewControllerLayoutGuide type="top" id="10776"/>
+                        <viewControllerLayoutGuide type="bottom" id="10777"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7290">
+                    <view key="view" contentMode="scaleToFill" id="10780">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="7293" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="68" y="157" width="202" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="7294" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="63" y="389" width="202" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7295" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="68" y="107" width="202" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stockpile:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7296" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="63" y="341" width="202" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7297" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="63" y="469" width="46" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="SaveButton_TouchUpInside:" destination="7289" id="9003" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7298" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="179" y="469" width="65" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="CancelButton_TouchUpInside:" destination="7289" id="7299" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9824" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="68" y="243" width="202" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="9825" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="68" y="282" width="202" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
                     </view>
-                    <connections>
-                        <outlet property="SetCompanyTextField" destination="7293" id="name-outlet-7293"/>
-                        <outlet property="SetStockPileTextField" destination="7294" id="name-outlet-7294"/>
-                        <outlet property="SaveButton" destination="7297" id="name-outlet-7297"/>
-                        <outlet property="CancelButton" destination="7298" id="name-outlet-7298"/>
-                        <outlet property="SourceTextField" destination="9825" id="name-outlet-9825"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7291" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10781" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="-3"/>
+            <point key="canvasLocation" x="-424" y="791"/>
+        </scene>
+        <scene sceneID="10785">
+            <objects>
+                <viewController id="10786" sceneMemberID="viewController" customClass="YesterdaySummaryViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="10783"/>
+                        <viewControllerLayoutGuide type="bottom" id="10784"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10787">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10788" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24" y="791"/>
+        </scene>
+        <scene sceneID="10792">
+            <objects>
+                <viewController id="10793" sceneMemberID="viewController" customClass="TodaySummaryViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="10790"/>
+                        <viewControllerLayoutGuide type="bottom" id="10791"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10794">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10795" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="799"/>
+        </scene>
+        <scene sceneID="10799">
+            <objects>
+                <viewController id="10800" sceneMemberID="viewController" customClass="AboutViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="10797"/>
+                        <viewControllerLayoutGuide type="bottom" id="10798"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10801">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10802" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-872" y="755"/>
         </scene>
     </scenes>
     <resources>

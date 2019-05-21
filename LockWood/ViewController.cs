@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using Foundation;
 using UIKit;
 using System.Collections.Generic;
@@ -91,23 +91,7 @@ namespace LockWood
              };
         }
 
-        //creats custom pickers attached to textfields
-      /*  public void PickerMaker(List<string> data, UITextField field)
-        {
-            List<string> data2 = data;
-            var pickerView = new UIPickerView();
-            var viewModel = new NameModel(data);
-            pickerView.Model = viewModel;
-            pickerView.ShowSelectionIndicator = true;
-            field.InputView = pickerView;
-            viewModel.textChanged += (sender, e) =>
-              {
-                  field.Text = viewModel.textNow;
-                  field.ResignFirstResponder();
-              };
-
-        }*/
-
+      
 
         //button that gets the information after the pickers are selected
         partial void SearchButton_TouchUpInside(UIButton sender)
