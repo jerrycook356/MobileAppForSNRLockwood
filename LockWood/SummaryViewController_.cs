@@ -23,25 +23,26 @@ namespace LockWood
         {
         }
 
-       
-partial void touchedButtonToday(UIButton sender)
+
+        partial void TouchedButtonToday(UIButton sender)
         {
-            Console.Out.WriteLine("todaySummaryButton touch up inside");
             viewChanger = new ViewChanger(this, "TodaySummaryViewController");
         }
 
-        partial void YesterdaySummaryButton_TouchUpInside(UIButton sender)
-        {
-            viewChanger = new ViewChanger(this, "YesterdaySummaryViewController");
-        }
 
+partial void YesterdaySummaryButton_TouchUpInside(UIButton sender)
+        {
+            throw new NotImplementedException();
+        }
 
 partial void BackButton_TouchUpInside(UIButton sender)
         {
             viewChanger = new ViewChanger(this, "MainScreenViewController");
         }
 
-partial void SearchButton_TouchUpInside(UIButton sender)
+
+
+        partial void SearchButton_TouchUpInside(UIButton sender)
         {
 
             DateTime startDate = DateTime.ParseExact(StartDateTextField.Text, "MM/dd/yyyy", null);
@@ -51,6 +52,8 @@ partial void SearchButton_TouchUpInside(UIButton sender)
             viewChanger = new ViewChanger(this, "SelectedDateSummaryView");
 
         }
+
+
 
         public void Picker(UITextField textField){
             var datePicker = new UIDatePicker();

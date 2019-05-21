@@ -212,7 +212,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11182" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="126" y="170" width="150" height="30"/>
+                                <connections>
+                                    <action selector="TouchedButtonToday:" destination="10772" id="11184" eventType="touchUpInside"/>
+                                </connections>
+                                <state key="normal" title="Today Summary"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11183" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="105" y="251" width="187" height="30"/>
+                                <state key="normal" title="Yesterday Summary"/>
+                                <connections>
+                                    <action selector="YesterdaySummaryButton_TouchUpInside:" destination="10772" id="11185" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary For Selected Dates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11186" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="92" y="317" width="246" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="11187" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="92" y="373" width="229" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="11243" firstAttribute="width" constant="229"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="11188" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="92" y="451" width="229" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="11246" firstAttribute="width" constant="229"/>
+                                </constraints>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11189" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="155" y="523" width="92" height="30"/>
+                                <state key="normal" title="Search:"/>
+                                <connections>
+                                    <action selector="SearchButton_TouchUpInside:" destination="10772" id="11190" eventType="touchUpInside"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="11249" firstAttribute="width" constant="92"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="11191" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="178" y="639" width="46" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="10772" id="11192" eventType="touchUpInside"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="11252" firstAttribute="width" constant="46"/>
+                                </constraints>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11206" translatesAutoresizingMaskIntoConstraints="NO" text="Summaries" textAlignment="center" misplaced="YES">
+                                <rect key="frame" x="55" y="55" width="309" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint id="11232" firstItem="11182" firstAttribute="leading" secondItem="10773" secondAttribute="leading" constant="126"/>
+                            <constraint id="11235" firstItem="11183" firstAttribute="leading" secondItem="10773" secondAttribute="leading" constant="105"/>
+                            <constraint id="11238" firstItem="10773" firstAttribute="trailing" secondItem="11186" secondAttribute="trailing" constant="76"/>
+                            <constraint id="11239" firstItem="11186" firstAttribute="top" secondItem="10773" secondAttribute="top" constant="317"/>
+                            <constraint id="11241" firstItem="11187" firstAttribute="leading" secondItem="10773" secondAttribute="leading" constant="92"/>
+                            <constraint id="11242" firstItem="10773" firstAttribute="bottom" secondItem="11187" secondAttribute="bottom" constant="333"/>
+                            <constraint id="11244" firstItem="11188" firstAttribute="leading" secondItem="10773" secondAttribute="leading" constant="92"/>
+                            <constraint id="11245" firstItem="10773" firstAttribute="bottom" secondItem="11188" secondAttribute="bottom" constant="255"/>
+                            <constraint id="11247" firstItem="11189" firstAttribute="leading" secondItem="10773" secondAttribute="leading" constant="155"/>
+                            <constraint id="11248" firstItem="10773" firstAttribute="bottom" secondItem="11189" secondAttribute="bottom" constant="183"/>
+                            <constraint id="11250" firstItem="11191" firstAttribute="leading" secondItem="10773" secondAttribute="leading" constant="178"/>
+                            <constraint id="11251" firstItem="10773" firstAttribute="bottom" secondItem="11191" secondAttribute="bottom" constant="67"/>
+                            <constraint id="11253" firstAttribute="trailingMargin" secondItem="11182" secondAttribute="trailing" constant="118"/>
+                            <constraint id="11254" firstItem="11183" firstAttribute="top" secondItem="11182" secondAttribute="bottom" constant="51"/>
+                            <constraint id="11255" firstAttribute="trailingMargin" secondItem="11183" secondAttribute="trailing" constant="102"/>
+                            <constraint id="11256" firstItem="11186" firstAttribute="leading" secondItem="10773" secondAttribute="leadingMargin" constant="72"/>
+                            <constraint id="11262" firstItem="11206" firstAttribute="top" secondItem="10769" secondAttribute="bottom" constant="35"/>
+                            <constraint id="11265" firstItem="10770" firstAttribute="top" secondItem="11206" secondAttribute="bottom" constant="609"/>
+                            <constraint id="11266" firstAttribute="centerX" secondItem="11206" secondAttribute="centerX" constant="-2.5"/>
+                            <constraint id="11269" firstItem="11182" firstAttribute="top" secondItem="11206" secondAttribute="bottom" constant="43"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TodayButton" destination="11182" id="name-outlet-11182"/>
+                        <outlet property="YesterdaySummaryButton" destination="11183" id="name-outlet-11183"/>
+                        <outlet property="StartDateTextField" destination="11187" id="name-outlet-11187"/>
+                        <outlet property="EndDateTextField" destination="11188" id="name-outlet-11188"/>
+                        <outlet property="SearchButton" destination="11189" id="name-outlet-11189"/>
+                        <outlet property="BackButton" destination="11191" id="name-outlet-11191"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10774" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
